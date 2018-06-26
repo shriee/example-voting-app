@@ -151,3 +151,128 @@ button.d{
   width:50%;
   height:100%;
 }
+
+
+select{
+	  -webkit-appearance: none; 
+   -moz-appearance: none;
+   appearance: none;       /* remove default arrow */
+   position: relative;
+}
+a{
+    outline: none;
+}
+.Wrapper{
+	width: 100%;
+	margin: 0 auto;
+	/*height: 100%;*/
+	overflow: hidden;
+	/*background-color: red;*/
+}
+
+
+.LogoSection{
+	width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+	border-bottom: 2px solid #EAE6E3;
+}
+.LogoSection .LogoSectionContainer{
+	width: 100%;
+	margin: 50px auto;
+	overflow: hidden;
+}
+.LogoSection .LogoSectionContainer img{
+	width: 200px;
+	margin: 0 auto;
+	display: block;
+	overflow: hidden;
+}
+
+
+.LoginSection, 
+.CustomerSection{
+	width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.LoginSection .LoginSectionContainer{
+	width: 100%;
+	margin: 50px auto;
+	overflow: hidden;
+}
+.LoginSection .LoginSectionContainer form{
+	width: 70%;
+	margin: 0px auto 40px auto;
+	overflow: hidden;
+}
+.LoginSection .LoginSectionContainer form .Input{
+	width: 100%;
+	margin: 40px auto 0px auto;
+	overflow: hidden;
+}
+.LoginSection .LoginSectionContainer form .Input input{
+	width: 100%;
+	border:none;
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	font-size: 15px;
+	padding: 5px 5%;
+	outline: none;
+	color: #737373;
+	border-bottom: 1.3px solid #9C9C9C;
+}
+.LoginSection .LoginSectionContainer form .Input input[type=submit]{
+	width: 100%;
+	margin: 30px auto;
+	border:none;
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	/*font-size: 14px;*/
+	padding: 15px;
+	color: #fff;
+	background-color: #9f2322 ;
+	font-weight: bold;
+	outline: none;
+	border-bottom: 0px solid #E3E3E3;
+}
+.LoginSection .LoginSectionContainer form .Input input[type=button]{
+	width: 100%;
+	margin: 30px auto;
+	border:none;
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	/*font-size: 14px;*/
+	padding: 15px;
+	color: #fff;
+	background-color: #9f2322 ;
+	font-weight: bold;
+	outline: none;
+	border-bottom: 0px solid #E3E3E3;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #737373;
+  font-weight: bold;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #737373;
+  font-weight: bold;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #737373;
+  font-weight: bold;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #737373;
+  font-weight: bold;
+}
