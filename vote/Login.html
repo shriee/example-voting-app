@@ -17,11 +17,11 @@
 			<div class="LoginSectionContainer">
 				<form class="ViewRecords" action="" method="">
 					<div class="Input">
-						<input type="text" name="partner_emailID" id="PartnerEmail" placeholder="Partner ID">
+						<input type="text" name="partner_emailID" id="UserEmail" placeholder="Partner ID">
 						<div class="mEmailError"></div>
 					</div>
 					<div class="Input">
-						<input type="password" name="partner_passWord" id="PartnerPwd" placeholder="Password">
+						<input type="password" name="partner_passWord" id="UserPwd" placeholder="Password">
 					</div>
 					<div class="Input LoginSubmit">
 						<input type="button" value="Login">
@@ -38,50 +38,30 @@
 	$(document).ready(function(){
 	$('.LoginSubmit input[type=button]').removeAttr('disabled');
 		$('.LoginSubmit input[type=button]').click(function(){
-			var partnerEmail = $('#PartnerEmail').val();
-			var partnerPwd = $('#PartnerPwd').val();
+			var userEmail = $('#UserEmail').val();
+			var userPwd = $('#UserPwd').val();
 
 			var partnerEmaillFilter = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
 			if (!partnerEmaillFilter.test(partnerEmail)) {
-				// $('.mEmailError').html('Please enter a valid email ID');
+				$('.mEmailError').html('Please enter a valid email ID');
 			}
 			else {
 				$('.mEmailError').html('');
 			}
 
 
-			if (partnerPwd.length !== 0 &&partnerEmaillFilter.test(partnerEmail)){
+			if (userPwd.length !== 0 && userPwd == 'test'  &&partnerEmaillFilter.test(userEmail)){
 				$('.LoginSubmit input[type=button]').attr('value','Login ...');
 				$('.LoginSubmit input[type=button]').attr('disabled','Disabled').css('cursor','not-allowed');
 				
-				$.ajax({
-					url : 'PartnerConfirmation.php',
-					type : "POST",
-					data : {
-						partner_emailID : partnerEmail,
-						partner_passWord : partnerPwd
-						
-					},
-
-					 success: function(msg){
-					 	if (msg.indexOf("Login Successful") > -1) {
-					 		successAlert(msg);
-					 		window.location.replace("CustomerDetails.php");
-					 	}
-					 	else if (msg.indexOf("Login failed. Retry") > -1) {
-					 		errorAlert(msg);
-					 		//window.location.replace("CustomerDetails.php");
-					 	}
-					 	else{
-							errorAlert(msg);
-					 	}
-					 }
-				});
+				window.location.replace("app.py");
 				return false;
 			}
+			else{
+				errorAlert("Error");
+			}
 			function errorAlert(msg){
-				ViaCon.notifyAlert(msg);
 				$('.LoginSubmit input[type=button]').attr('value','Login');
 				$('.LoginSubmit input[type=button]').removeAttr('disabled').css('cursor','pointer');
 			}
